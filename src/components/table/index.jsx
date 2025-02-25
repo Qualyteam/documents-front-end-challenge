@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Table as ReactstrapTable } from 'reactstrap';
+import { useState } from 'react';
+import { Button } from "antd";
 import { noop } from '@babel/types';
 import './index.css';
 
-// Example of use
-
-{/* <Table
-    header={[
-        {
-            title: "A",
-            column: "a",
-        }
-    ]}
-    rows={[
-        {
-            a: "Example1"
-        }, {
-            a: "Example2"
-        }, {
-            a: "Example3"
-        }, {
-            a: "Example4"
-        }, {
-            a: "Example5"
-            onClick: () => alert(`item ${5} clicked!`)
-        }, {
-            a: "Example6"
-        },
-    ]}
-    itemsPerPage={3}
-/> */}
-
+/**
+ * @example
+ * <Table
+ *   header={[
+ *       {
+ *           title: "Name",
+ *           column: "name",
+ *       }
+ *   ]}
+ *   rows={[
+ *       {
+ *           name: "Example1"
+ *       }, {
+ *           name: "Example2"
+ *       }, {
+ *           name: "Example3"
+ *       }, {
+ *           name: "Example4"
+ *       }, {
+ *           name: "Example5"
+ *           onClick: () => alert(`item ${5} clicked!`)
+ *       }, {
+ *           name: "Example6"
+ *       },
+ *   ]}
+ *   itemsPerPage={3}
+ * />
+ */
 const Table = ({ header, rows, itemsPerPage }) => {
 
     const [page, setPage] = useState(1);
@@ -60,7 +59,7 @@ const Table = ({ header, rows, itemsPerPage }) => {
 
     return (
         <div>
-            <ReactstrapTable hover>
+            <table>
                 <thead>
                     <tr>
                         {header.map((h, index) => <th key={`header-${index}`}>{h.title}</th>)}
@@ -77,7 +76,7 @@ const Table = ({ header, rows, itemsPerPage }) => {
                         </tr>
                     ))}
                 </tbody>
-            </ReactstrapTable>
+            </table>
             {itemsPerPage &&
                 <div className="table-pagination">
                     <Button onClick={handlePreviousPageButton} disabled={page === 1}>
@@ -95,9 +94,4 @@ const Table = ({ header, rows, itemsPerPage }) => {
     );
 }
 
-Table.propTypes = {
-    rows: PropTypes.array.isRequired,
-    header: PropTypes.array.isRequired,
-}
-
-export default Table;
+export { Table };

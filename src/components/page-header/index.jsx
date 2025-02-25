@@ -1,24 +1,18 @@
-import React from 'react';
-
 import './index.css';
 
 const PageHeader = ({ title, caption }) => {
     return (
         <div className="page-header">
-            <h1 className="page-header__title">
+            <h2 className="page-header__title">
                 {title}
-            </h1>
+            </h2>
             {caption &&
-                <h6 className="page-header__caption">
+                <p>
                     {caption}
-                </h6>
+                </p>
             }
         </div>
     )
 };
 
-PageHeader.propTypes = {
-
-}
-
-export default PageHeader;
+export { PageHeader };

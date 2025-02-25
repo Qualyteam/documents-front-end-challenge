@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../api';
-import PageContent from '../../components/page-content';
-import PageHeader from '../../components/page-header';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
 
-export const DocumentDetails = (props) => {
+import { PageContent } from '../../components/page-content';
+import { PageHeader } from '../../components/page-header';
+import api from '../../api';
+
+export const DocumentDetails = () => {
     const [document, setDocument] = useState({});
+    const { id } = useParams()
 
     useEffect(() => {
-        api.get(`/documents/${props.match.params.id}`)
+        api.get(`/documents/${id}`)
             .then(response => setDocument(response.data))
             .catch(error => console.log(error));
-    }, []);
+    }, [id]);
 
     return (
         <div>

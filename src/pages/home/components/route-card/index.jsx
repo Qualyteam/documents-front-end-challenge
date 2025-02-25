@@ -1,23 +1,20 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
-import { Card, CardTitle, CardText, Button } from 'reactstrap';
+import { Card, Button } from "antd";
 
 const RouteCard = ({ title, caption, actionText, route, disabled }) => {
+    const navigate = useNavigate();
     
-    const history = useHistory();
-    
-    return <Card body>
-        <CardTitle tag="h4">
-            {title}
-        </CardTitle>
-        <CardText>
-            {caption}
-        </CardText>
-        <Button disabled={disabled} onClick={() => history.push(route)}>
-            {actionText}
-        </Button>
-    </Card>
-}
+    return (
+        <Card title={<h2>{title}</h2>} style={{fontSize: '1rem'}}>
+            <p style={{marginTop: '0'}}>
+                {caption}
+            </p>
+            <Button disabled={disabled} onClick={() => navigate(route)} block type='primary' size='large'>
+                {actionText}
+            </Button>
+        </Card>
+    )
+};
 
-export default RouteCard;
+export { RouteCard };

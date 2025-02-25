@@ -1,10 +1,8 @@
-import React from 'react';
+import { Col, Row } from 'antd';
 
-import { Row, Col } from 'reactstrap';
-
-import PageContent from '../../components/page-content';
-import PageHeader from '../../components/page-header';
-import RouteCard from './components/route-card';
+import { PageContent } from '../../components/page-content';
+import { PageHeader } from '../../components/page-header';
+import { RouteCard } from './components/route-card';
 
 export const Home = () => {
     return (
@@ -14,8 +12,8 @@ export const Home = () => {
                 caption="Aqui você pode navegar para outras funções do sistema"
             />
             <PageContent>
-                <Row gutter={8}>
-                    <Col style={{ marginBottom: '24px' }} sm={6} md={6} lg={4}>
+                <Row gutter={24} justify={'center'} style={{flex: '1'}}>
+                    <Col className="gutter-row" span={6}>
                         <RouteCard
                             title="Master List"
                             caption="Ver listagem de documentos"
@@ -23,7 +21,7 @@ export const Home = () => {
                             route="/list"
                         />
                     </Col>
-                    <Col style={{ marginBottom: '24px' }} sm={6} md={6} lg={4}>
+                    <Col className="gutter-row" span={6}>
                         <RouteCard
                             title="Criar Documento"
                             caption="Inserir novo documento"
@@ -31,7 +29,7 @@ export const Home = () => {
                             disabled
                         />
                     </Col>
-                    <Col style={{ marginBottom: '24px' }} sm={6} md={6} lg={4}>
+                    <Col className="gutter-row" span={6}>
                         <RouteCard
                             title="Relatórios"
                             caption="Ver relatórios do documento"

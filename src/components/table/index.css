@@ -1,7 +1,45 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem 0;
+}
+
+thead {
+    border: none;
+    padding: 16px;
+}
+
+thead tr {
+    background-color: #f3f3f3;
+    height: 48px;
+    border: solid #f3f3f3;
+    border-width: 0px 2px 0px 2px;
+    text-align: left;
+}
+
+th {
+    color: #111;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+}
+
+tbody tr {
+    border: 1px solid #f3f3f3;
+    max-height: 48px;
+}
+
+tbody td {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.5rem;
+}
+
 .table-pagination {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 40px;
 }
 
 .table-pagination--page-display {

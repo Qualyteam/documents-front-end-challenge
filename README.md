@@ -9,21 +9,10 @@ To run this project you should
     npm install
 ```
 
-2. You can start the app and server concurrently or start each one separately
+2. You can start the app and server concurrently
 
-Run both
 ```
     npm run dev
-```
-
-Run app
-```
-    npm start
-```
-
-Run server
-```
-    npm run start-server
 ```
 
 ## Server Endpoints
@@ -48,7 +37,7 @@ With Json Server you can [filter][2], [paginate][3] and [sort][4] your queries.
 
 [Axios][5]
 
-[Reactstrap][6]
+[Ant Design][6]
 
 [React router][7]
 
@@ -57,5 +46,5 @@ With Json Server you can [filter][2], [paginate][3] and [sort][4] your queries.
 [3]: https://github.com/typicode/json-server#paginate "json-server paginate"
 [4]: https://github.com/typicode/json-server#sort "json-server sort"
 [5]: https://github.com/axios/axios "axios"
-[6]: https://reactstrap.github.io/ "reactstrap"
-[7]: https://reactrouter.com/web/guides/quick-start "react router"
+[6]: https://ant.design/components/overview/ "ant design"
+[7]: https://reactrouter.com/home "react router"

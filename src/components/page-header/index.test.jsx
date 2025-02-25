@@ -1,8 +1,7 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import PageHeader from '.';
+import { PageHeader } from '.';
 
 describe('Page Header', () => {
     it('should render header title text', async () => {

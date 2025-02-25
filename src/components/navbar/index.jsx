@@ -1,40 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-    Navbar as ReactstrapNavbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarToggler,
-    Collapse
-} from 'reactstrap';
+import { Link } from 'react-router';
+import { Button } from "antd";
 
 import './index.css';
 
 export const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
-
     return (
-        <ReactstrapNavbar color="light" light expand="md">
-            <NavbarBrand>Qualyteam Challenge</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-                <Nav className="mr-auto" navbar>
-                    <NavItem>
-                        <NavLink>
-                            <Link to="/">Home</Link>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                            <Link to="/list">Master List</Link>
-                        </NavLink>
-                    </NavItem>
-                </Nav>
-            </Collapse>
-        </ReactstrapNavbar>
+        <nav color="light" className='navbar'>
+            <h1>Qualyteam Challenge</h1>
+            <ul>
+                <li>
+                    <Button type='link' size='large'>
+                        <Link to="/">Home</Link>
+                    </Button>
+                </li>
+                <li>
+                    <Button type='link' size='large'>
+                        <Link to="/list">Master List</Link>
+                    </Button>
+                </li>
+            </ul>
+        </nav>
     );
 }
